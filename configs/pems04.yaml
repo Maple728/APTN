@@ -1,0 +1,26 @@
+base_dir: logs
+data:
+  batch_size: 64
+  data_name: pems04
+  data_filename: datasets/PEMS04/pems04.npz
+  T_skip: 288
+  cache_dir: None
+  metrics: [rmse, mae]
+
+model:
+  name: APTN
+  T: 24
+  n: 7
+  D: 307
+  horizon: 12
+  m: 128
+  v: 128
+  loss_function: mse
+
+train:
+  dropout_rate: 0.0
+  lr: 0.001
+  epoch: 0
+  max_epoch: 500
+  lr_scheduler: PlateauLRScheduler
+  patience: 15
